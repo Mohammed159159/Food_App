@@ -46,7 +46,6 @@ class Food extends StatelessWidget {
             backgroundColor: Colors.white,
             body: Column(children: [
               Container(
-                color: Colors.amber,
                 child: Column(
                   children: [
                     Row(children: [
@@ -141,101 +140,101 @@ class Food extends StatelessWidget {
               SizedBox(
                 height:2,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Container(
-                  color: Colors.white,
-                  height: 277,
-                  child: ListView.builder(
-                    itemCount: bestpics.length,
-                    itemBuilder: (context,index){
-                    
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 8.0, bottom: 8, right: 8),
-                        child: Container(
-                          child: Stack(
-                            children:[
-                              Positioned(
-                                child: Container(
-                                  child: ClipRRect(
-                                   child: Image.asset(bestpics[index],
-                                    fit: BoxFit.cover,
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    color: Colors.white,
+                    child: ListView.builder(
+                      itemCount: bestpics.length,
+                      itemBuilder: (context, index){
+
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 8.0, bottom: 8, right: 8),
+                          child: Container(
+                            child: Stack(
+                              children:[
+                                Positioned(
+                                  child: Container(
+                                    child: ClipRRect(
+                                     child: Image.asset(bestpics[index],
+                                      fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.circular(30),
                                     ),
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  width: 130,
-                                  height: 130,
-                                  ),
-                                bottom: 5,
-                                right: 5,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                
-                                children: [
+                                    width: 130,
+                                    height: 130,
+                                    ),
+                                  bottom: 5,
+                                  right: 5,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
 
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 15.0, top: 15),
-                                        child: Text(best[index],
-                                        style: TextStyle(color: Colors.grey[601], fontWeight: FontWeight.w300),
+                                  children: [
+
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 15.0, top: 15),
+                                          child: Text(best[index],
+                                          style: TextStyle(color: Colors.grey[601], fontWeight: FontWeight.w300),
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 15.0, top: 20),
-                                        child: Text(names[index],
-                                          style: TextStyle(color: Colors.grey[600],fontSize: 27),
-                                          ),
-                                      ),
-                                       Padding(
-                                        padding: const EdgeInsets.only(left: 15.0, top: 2),
-                                        child: Text(restN[index],
-                                          style: TextStyle(color: Colors.grey[600],fontSize: 15,
-                                          fontWeight: FontWeight.w300 ),
-                                          ),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(left: 15.0, top: 10),
-                                            child: Text('Add to Cart',
-                                              style: TextStyle(color: Colors.grey[600],fontSize: 15, 
-                                              fontWeight: FontWeight.w300),
-                                              ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(top: 3),
-                                            child: IconButton(icon: Icon(Icons.add_shopping_cart, size: 20)
-                                            , onPressed: null),
-                                          )
-                                        ],
-                                      ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 15.0, top: 20),
+                                          child: Text(names[index],
+                                            style: TextStyle(color: Colors.grey[600],fontSize: 27),
+                                            ),
+                                        ),
+                                         Padding(
+                                          padding: const EdgeInsets.only(left: 15.0, top: 2),
+                                          child: Text(restN[index],
+                                            style: TextStyle(color: Colors.grey[600],fontSize: 15,
+                                            fontWeight: FontWeight.w300 ),
+                                            ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 15.0, top: 10),
+                                              child: Text('Add to Cart',
+                                                style: TextStyle(color: Colors.grey[600],fontSize: 15,
+                                                fontWeight: FontWeight.w300),
+                                                ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(top: 3),
+                                              child: IconButton(icon: Icon(Icons.add_shopping_cart, size: 20)
+                                              , onPressed: null),
+                                            )
+                                          ],
+                                        ),
 
 
-                              ],)
-                             
-                        
-                            ]
+                                ],)
+
+
+                              ]
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black54,
+                                  blurRadius: 4,
+                                  offset: Offset(-2, 5)
+                                )
+                              ]
+                            ),
+
                           ),
-                          height: 154,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black54,
-                                blurRadius: 4,
-                                offset: Offset(-2, 5) 
-                              )
-                            ]
-                          ),
-                  
-                        ),
-                      );
-                    },
-                    
+                        );
+                      },
+
+                  ),
+                  )
                 ),
-                )
               )
             ])));
   }
